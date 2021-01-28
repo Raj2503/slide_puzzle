@@ -7,11 +7,11 @@ import 'flutter.dart';
 import 'shared_theme.dart';
 import 'widgets/decoration_image_plus.dart';
 
-class ThemeSeattle extends SharedTheme {
+class ThemeRock extends SharedTheme {
   @override
-  String get name => 'Seattle';
+  String get name => 'Rock';
 
-  const ThemeSeattle();
+  const ThemeRock();
 
   @override
   Color get puzzleThemeBackground => const Color.fromARGB(153, 90, 135, 170);
@@ -23,7 +23,7 @@ class ThemeSeattle extends SharedTheme {
   Color get puzzleAccentColor => const Color(0xff000579f);
 
   @override
-  AssetImage get bgImg => const AssetImage('asset/seattle.jpg');
+  AssetImage get bgImg => const AssetImage('asset/rock.jpg');
 
   @override
   RoundedRectangleBorder puzzleBorder(bool small) =>
@@ -48,7 +48,7 @@ class ThemeSeattle extends SharedTheme {
         puzzleHeight: puzzle.height,
         pieceIndex: i,
         fit: BoxFit.cover,
-        image: const AssetImage('asset/seattle.jpg'));
+        image: const AssetImage('asset/rock.jpg'));
 
     final correctPosition = puzzle.isCorrectPosition(i);
     final content = createInk(

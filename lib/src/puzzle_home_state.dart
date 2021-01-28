@@ -96,14 +96,14 @@ class PuzzleHomeState extends State
         child: Material(
           child: Stack(
             children: <Widget>[
-              const SizedBox.expand(
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Image(
-                    image: AssetImage('asset/seattle.jpg'),
-                  ),
-                ),
-              ),
+              // const SizedBox.expand(
+              //   child: FittedBox(
+              //     fit: BoxFit.cover,
+              //     child: Image(
+              //       image: AssetImage('asset/seattle.jpg'),
+              //     ),
+              //   ),
+              // ),
               const LayoutBuilder(builder: _doBuild),
             ],
           ),
@@ -200,9 +200,18 @@ Widget _doBuild(BuildContext _, BoxConstraints constraints) =>
 Widget _doBuildCore(bool small) => ValueTabController<SharedTheme>(
       values: themes,
       child: Consumer<SharedTheme>(
-        builder: (_, theme, __) => AnimatedContainer(
-          duration: puzzleAnimationDuration,
-          color: theme.puzzleThemeBackground,
+        builder: (_, theme, __) => Container(
+          // duration: puzzleAnimationDuration,
+          // color: theme.puzzleThemeBackground,
+          decoration: theme.bgImg == null
+              ? BoxDecoration(color: theme.puzzleThemeBackground)
+              : BoxDecoration(
+                  image: DecorationImage(
+                    image: theme.bgImg,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+
           child: Center(
             child: theme.styledWrapper(
               small,

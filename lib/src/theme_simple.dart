@@ -24,6 +24,9 @@ class ThemeSimple extends SharedTheme {
   Color get puzzleAccentColor => _accentBlue;
 
   @override
+  AssetImage get bgImg => null;
+
+  @override
   RoundedRectangleBorder puzzleBorder(bool small) =>
       const RoundedRectangleBorder(
         side: BorderSide(color: Colors.black26, width: 1),

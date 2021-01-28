@@ -22,6 +22,8 @@ abstract class SharedTheme {
 
   Color get puzzleAccentColor;
 
+  AssetImage get bgImg;
+
   EdgeInsetsGeometry tilePadding(PuzzleProxy puzzle) => const EdgeInsets.all(6);
 
   Widget tileButton(int i, PuzzleProxy puzzle, bool small);
